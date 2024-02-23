@@ -14,6 +14,7 @@ nav {
   justify-content: space-between;
   align-items: center;
   padding: 1rem 4rem;
+  animation: fadeIn 0.5s linear;
 }
 
 .logo {
@@ -31,18 +32,43 @@ nav {
   list-style-type: none;
 }
 
+
 .link li a {
+  position: relative;
+  transition: background-color 0.5s linear;
   text-decoration-line: none;
-  padding: 1rem 1.2rem;
+  padding: 1rem 2rem;
   font-weight: bold;
   font-size: large;
+  text-transform: uppercase;
+  color: #EEA5A6;
 }
+
+.link li a::before {
+  content: '';
+  transition: 0.3s;
+  height: 5px;
+  width: 0;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  background-color: #8E7AB5;
+}
+
+.link li a:hover::before {
+  width: 100%;
+}
+
+.link li a:hover {
+  color: #a45658;
+}
+
 
 .container {
   width: 100%;
   height: 83vh;
   background-color: #8E7AB5;
-  animation: fadeIn 0.8s ease-in;
+  animation: fadeIn 0.8s ease-in, moveup 0.5s ease;
   margin-bottom: 15%;
   opacity: 1;
 }
@@ -56,10 +82,17 @@ nav {
 @keyframes fadeIn {
   from {
     opacity: 0;
-    transform: translateY(10%);
   }
   to {
     opacity: 1;
+  }
+}
+
+@keyframes moveup {
+  from {
+    transform: translateY(15%);
+  }
+  to {
     transform: translateY(0);
   }
 }
