@@ -5,27 +5,45 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Etika's Meals</title>
   <link rel="stylesheet" href="style.css">
-  <script>
-    halaman = 0;
-  </script>
 </head>
 <body>
   <nav>
-    <div class="logo">tes</div>
+    <div class="logo">
+      <img src="./assets/tom.jpg" alt="" style="width: 100%; border-radius: 50%;">
+    </div>
     <div class="link">
       <ul>
         <li><a href="" >Home</a></li>
-        <li><a href="">Meals</a></li>
-        <li><a href="">Profile</a></li>
+        <li><a onclick="scrolldiv('meals')">Meals</a></li>
+        <li><a onclick="scrolldiv('profile')">Profile</a></li>
         <li><a href="">Contact</a></li>
       </ul>
     </div>
   </nav>
-  <div class="container"></div>
-  <div class="container-hidden"></div>
-  <div class="container-hidden"></div>
-
-  <footer>&copy; 2024 Fathursyah Awandanu, Bogor</footer>
+  <div id="wrapper"></div>
+  <main>
+    <div class="container" id="home"></div>
+    <div class="container hidden" id="meals">nyam</div>
+    <div class="container hidden" id="profile">profile</div>
+    <div class="container hidden"></div>
+  </main>
+  <footer>&copy; 2024 Fathur Syah</footer>
   <script src="./script.js"></script>
+  <script>
+    function scrolldiv(element) {
+            window.scrollTo(0,
+                findPosition(document.getElementById(element)));
+        }
+        function findPosition(obj) {
+            var currenttop = -30;
+            if (obj.offsetParent) {
+                do {
+                    currenttop += obj.offsetTop;
+                } while ((obj = obj.offsetParent));
+                return [currenttop];
+            }
+        }
+  </script>
+
 </body>
 </html>

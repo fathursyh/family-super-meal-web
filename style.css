@@ -11,8 +11,13 @@
   font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
-body {
-  background-color: white;
+html {
+  overflow: auto;
+  scroll-behavior: smooth;
+}
+
+main {
+  scroll-snap-type: y proximity;
 }
 
 nav {
@@ -21,14 +26,12 @@ nav {
   justify-content: space-between;
   align-items: center;
   padding: 1rem 4rem;
-  margin-top: 3rem;
   animation: fadeIn 0.5s linear;
 }
 
 .logo {
-  width: 50px;
-  height: 50px;
-  background-color: burlywood;
+  width: 100px;
+  height: 100px;
 }
 
 .link ul{
@@ -73,28 +76,37 @@ nav {
 
 
 .container {
+  scroll-snap-align: center;
   width: 100%;
   height: 90vh;
   background-color: var(--color1);
   animation: fadeIn 0.8s ease;
-  margin-bottom: 15%;
+  margin-bottom: 20%;
   opacity: 1;
+  transition-duration: 0.8s;
+  transform: translateY(0);
 }
 
-.container-hidden {
+.container:last-child {
+  margin-bottom: 3%;
+}
+
+.hidden {
+  transition-duration: 0.8s;
   width: 100%;
-  height: 83vh;
+  height: 90vh;
+  background-color: var(--color1);
+  margin-bottom: 15%;
   opacity: 0;
+  transform: translateY(15%);
 }
 
 @keyframes fadeIn {
   from {
-    display: none;
     opacity: 0;
     transform: translateY(15%);
   }
   to {
-    display: flex;
     opacity: 1;
     transform: translateY(0);
   }
@@ -108,7 +120,5 @@ footer {
   margin: 10px;
   font-size: smaller;
   opacity: 0.8;
+  text-decoration: underline;
 }
-
-
-
