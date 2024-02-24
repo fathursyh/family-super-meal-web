@@ -4,16 +4,20 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Etika's Meals</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="./style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 </head>
 <body>
-  <nav>
+  <nav >
     <div class="logo">
       <img src="./assets/tom.jpg" alt="" style="width: 100%; border-radius: 50%;">
+      <p>Pphobiaart</p>
     </div>
     <div class="link">
       <ul>
-        <li><a href="" >Home</a></li>
+        <li><a href="">Home</a></li>
         <li><a onclick="scrolldiv('meals')">Meals</a></li>
         <li><a onclick="scrolldiv('profile')">Profile</a></li>
         <li><a onclick="scrolldiv('contact')">Contact</a></li>
@@ -21,7 +25,9 @@
     </div>
   </nav>    
   <main> <!--MAIN CONTENTS-->
-    <div class="container" ></div>
+    <div class="container">
+      <!-- <img src="./assets/star1.jpeg" alt="" id="foto1"> -->
+    </div>
     <div class="container hidden" id="meals">nyam</div>
     <div class="container hidden" id="profile">profile</div>
     <div class="container hidden" id="contact">kontak</div>
@@ -34,7 +40,11 @@
       window.scrollTo({left:0, top:
       document.getElementById(element).offsetTop - 30, behavior:"smooth"});
     }
-  
+    history.scrollRestoration = 'manual'; // reset scroll history
+    window.onbeforeunload = function() {
+      window.scrollTo(0,0);
+    };
+
   </script>
 
 </body>

@@ -18,8 +18,8 @@ document.addEventListener("scroll", () => {
   });
 });
 
-window.addEventListener("load", () => {
-  window.scrollTo(0, 0);
-});
-
-
+window.onload = () => {
+  setTimeout(() => {
+    document.querySelector('.logo img').style.width = '70%';
+  }, 2000)
+};
