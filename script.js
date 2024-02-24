@@ -1,8 +1,8 @@
 
 function inViewport(element) {
   var posisi = element.getBoundingClientRect();
-  // cek posisi pas element udah 30% atau 0.3 keliatan
-  return !(posisi.top > innerHeight * 0.7 || posisi.bottom < 0);
+  // cek posisi pas element udah 20% atau 0.2 keliatan
+  return !(posisi.top > innerHeight * 0.8 || posisi.bottom < 0);
 }
 
 var myElement = document.querySelectorAll(".hidden");
@@ -17,3 +17,9 @@ document.addEventListener("scroll", () => {
     }
   });
 });
+
+window.addEventListener("load", () => {
+  window.scrollTo(0, 0);
+});
+
+

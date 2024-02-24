@@ -16,33 +16,25 @@
         <li><a href="" >Home</a></li>
         <li><a onclick="scrolldiv('meals')">Meals</a></li>
         <li><a onclick="scrolldiv('profile')">Profile</a></li>
-        <li><a href="">Contact</a></li>
+        <li><a onclick="scrolldiv('contact')">Contact</a></li>
       </ul>
     </div>
-  </nav>
-  <div id="wrapper"></div>
-  <main>
-    <div class="container" id="home"></div>
+  </nav>    
+  <main> <!--MAIN CONTENTS-->
+    <div class="container" ></div>
     <div class="container hidden" id="meals">nyam</div>
     <div class="container hidden" id="profile">profile</div>
-    <div class="container hidden"></div>
+    <div class="container hidden" id="contact">kontak</div>
   </main>
+  <p id="top" onclick="window.scrollTo(0,0)" style="cursor: pointer;">&#8679 back to top</p>
   <footer>&copy; 2024 Fathur Syah</footer>
   <script src="./script.js"></script>
   <script>
     function scrolldiv(element) {
-            window.scrollTo(0,
-                findPosition(document.getElementById(element)));
-        }
-        function findPosition(obj) {
-            var currenttop = -30;
-            if (obj.offsetParent) {
-                do {
-                    currenttop += obj.offsetTop;
-                } while ((obj = obj.offsetParent));
-                return [currenttop];
-            }
-        }
+      window.scrollTo({left:0, top:
+      document.getElementById(element).offsetTop - 30, behavior:"smooth"});
+    }
+  
   </script>
 
 </body>
