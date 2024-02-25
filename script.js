@@ -21,5 +21,8 @@ document.addEventListener("scroll", () => {
 window.onload = () => {
   setTimeout(() => {
     document.querySelector('.logo img').style.width = '70%';
-  }, 2000)
+    document.querySelector('nav').style.padding= '0.6rem 4rem';
+    document.querySelector("nav").style.backgroundColor ="rgba(255, 255, 255, 0.528)";
+    document.querySelector(".logo p").style.color = "rgb(62, 34, 34)";
+  }, 1000)
 };

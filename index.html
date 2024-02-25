@@ -17,7 +17,7 @@
     </div>
     <div class="link">
       <ul>
-        <li><a href="">Home</a></li>
+        <li><a onclick="window.scrollTo({top: 0, left: 0, behavior:'smooth'})">Home</a></li>
         <li><a onclick="scrolldiv('meals')">Meals</a></li>
         <li><a onclick="scrolldiv('profile')">Profile</a></li>
         <li><a onclick="scrolldiv('contact')">Contact</a></li>
@@ -32,7 +32,7 @@
     <div class="container hidden" id="profile">profile</div>
     <div class="container hidden" id="contact">kontak</div>
   </main>
-  <p id="top" onclick="window.scrollTo(0,0)" style="cursor: pointer;">&#8679 back to top</p>
+  <p id="top" onclick="window.scrollTo({top: 0, left: 0, behavior:'smooth'})" style="cursor: pointer;">&#8679 back to top</p>
   <footer>&copy; 2024 Fathur Syah</footer>
   <script src="./script.js"></script>
   <script>
@@ -42,7 +42,7 @@
     }
     history.scrollRestoration = 'manual'; // reset scroll history
     window.onbeforeunload = function() {
-      window.scrollTo(0,0);
+      window.scrollTo({top: 0, left: 0, behavior:'auto'});
     };
 
   </script>
