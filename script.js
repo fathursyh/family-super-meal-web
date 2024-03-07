@@ -1,4 +1,4 @@
-
+// PENTING BUAT VIEWPORT EVENT
 function inViewport(element) {
   var posisi = element.getBoundingClientRect();
   // cek posisi pas element udah 20% atau 0.2 keliatan
@@ -7,6 +7,7 @@ function inViewport(element) {
 
 var myElement = document.querySelectorAll(".hidden");
 
+// EKSEKUSI VIEWPORT EVENT
 document.addEventListener("scroll", () => {
   myElement.forEach((item) => {
     if (inViewport(item)) {
